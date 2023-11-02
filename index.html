@@ -276,14 +276,17 @@
             if(NowLength < 9){
                 const newDiv = document.createElement('div');
                 FireNow.appendChild(newDiv);
-            }else{
+
+            }else if(NowLength === 9){
                 const newDiv = document.createElement('div');
                 FireNow.appendChild(newDiv);
 
-                onWrap.nextElementSibling.classList.add('on_wrap');
-
+                const nextEl = onWrap.nextElementSibling;
+                nextEl.classList.add('on_wrap');
                 onWrap.classList.remove('on_wrap');
                 onWrap.classList.add('after_wrap');
+            }else{
+                console.log('end');
             }
 
 
